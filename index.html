@@ -89,6 +89,27 @@
       background: linear-gradient(135deg, var(--secondary), var(--primary));
     }
 
+    .marquee-container {
+    /* Required to hide overflow and establish a position context */
+    overflow: hidden;
+    white-space: nowrap; /* Keeps text on a single line */
+    position: relative;
+    width: 100%; /* Or whatever width you want */
+}
+
+.marquee-content {
+    /* Start the animation */
+    display: inline-block;
+    animation: scroll-left 10s linear infinite;
+    padding-left: 100%; /* Starts the content off-screen to the right */
+}
+
+/* Define the animation */
+@keyframes scroll-left {
+    0%   { transform: translateX(0%); } /* Content at start position */
+    100% { transform: translateX(-100%); } /* Content moves left past its starting position */
+}
+
     footer {
       text-align: center;
       padding: 30px 10px;
@@ -117,13 +138,23 @@
     </div>
   </header>
 
+  <!-- <Wrapper><p>
+        Warmly Welcome for Visiting my portfolio.
+      </p></Wrapper> -->
+
+      <!-- <marquee>Your automatically scrolling sentence goes here.</marquee> -->
+
+      <div class="marquee-container">
+        <p class="marquee-content">Warmly Welcome for Visiting my portfolio.</p>
+      </div>
+
   <section id="about">
     <h2>About Me</h2>
     <div class="card">
       <p>
         I am a dedicated Flutter developer with strong experience in designing and building clean,
         efficient, and scalable mobile applications. I have worked on E‑commerce, LMS, POS,
-        Sales ERP, and Agro ERP systems. I specialize in state management (GetX, BLoC,
+        Sales ERP, and Agro ERP systems. I specialize in state management (Provider, GetX, BLoC,
         MVC, MVVM), UI/UX, Firebase, Google Maps, and clean app architecture.
       </p>
     </div>
@@ -134,8 +165,12 @@
     <div class="card timeline">
       <div class="item">
         <div class="company">Playon24 — (5 October 2024 – Present)</div>
-        <p>Role: Flutter Developer</p>
+        <p>Role: Software Engineer</p>
         <ul>
+          <li>Binbox – Ecommerce</li>
+          <li>CelcomBazar – Ecommerce</li>
+          <li>HealthCare24 – Docotor Appointment</li>
+          <li>Prestige Agro – POS ERP</li>
           <li>Eventas Agro – POS ERP</li>
           <li>TATA Agro – POS ERP</li>
           <li>Pheromone Agro – POS ERP</li>
@@ -143,8 +178,8 @@
       </div>
 
       <div class="item">
-        <div class="company">Tork — (11 February 2024 – 30 September 2024)</div>
-        <p>Role: Flutter Developer</p>
+        <div class="company">The Tork — (11 February 2024 – 30 September 2024)</div>
+        <p>Role: Junior Flutter Developer</p>
         <ul>
           <li>UYLAB – Learning Management System App</li>
           <li>KIREIBD – E‑commerce Mobile App</li>
@@ -170,10 +205,14 @@
       <span>Dart</span>
       <span>Firebase</span>
       <span>REST API</span>
+      <span>Provider</span>
       <span>GetX</span>
       <span>BLoC</span>
       <span>Google Maps</span>
-      <span>SQLite / Local DB</span>
+      <span>SQLite</span>
+      <span>Hive</span>
+      <span>MVC</span>
+      <span>MVVM</span>
       <span>Clean Architecture</span>
       <span>Git & GitHub</span>
     </div>
